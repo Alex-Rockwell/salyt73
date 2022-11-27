@@ -1,0 +1,333 @@
+.header
+    position: fixed
+    top: 0
+    left: 0
+    max-width: 280px
+    width: 100%
+    max-height: 100vh
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    z-index: 2
+    transition: max-width 0s 0.4s
+    &__alive
+        opacity: 0
+        transition: 1s
+        position: absolute
+    &__alive1
+        left: 88px
+    &__alive2
+        left: 93px
+        top: 40px
+    &__alive3
+        left: 105px
+        top: 42px
+    &__alive4
+        left: 98px
+        top: 48px
+    &__alive5
+        left: 104px
+        top: 40px
+    &__alive6
+        left: 88px
+    &__alive7
+        left: 92px
+        top: 40px
+    &__alive8
+        left: 90px
+        top: 42px
+    &__alive9
+        left: 90px
+        top: 42px
+    &__alive10
+        left: 90px
+        top: 42px
+    &__alive11
+        left: 90px
+        top: 42px
+    &__logo-blink
+        position: absolute
+        top: 50px
+        left: 250px
+        width: 1px
+        height: 1px
+        background: transparent
+        transition: 1s
+        border: 1px solid transparent
+        border-radius: 100px
+    &__logo-link:hover
+        .header__alive1
+            opacity: 1
+            transform: translate(76px, -21px)
+        .header__alive2
+            transform: translate(51px, 2px)
+            opacity: 1
+        .header__alive3
+            transform: translate(28px, -9px)
+            opacity: 1
+        .header__alive4
+            transform: translate(80px, -9px)
+            opacity: 1
+        .header__alive5
+            transform: translate(36px, -26px)
+            opacity: 1
+        .header__alive6
+            transform: translate(68px, 0px)
+            opacity: 1
+        .header__alive7
+            transform: translate(96px, -33px)
+            opacity: 1
+        .header__alive8
+            transform: translate(107px, -15px)
+            opacity: 1
+        .header__alive9
+            transform: translate(29px, 2px)
+            opacity: 1
+        .header__alive10
+            transform: translate(22px, -9px)
+            opacity: 1
+        .header__alive11
+            transform: translate(26px, -22px)
+            opacity: 1
+        .header__logo-blink
+            box-shadow: -2px 2px 12px 6px yellow
+
+
+
+
+
+    &__list-item--pic
+        width: 190px
+        display: flex
+        justify-content: space-between
+        a
+            transition: .5s
+        a:hover
+            transform: scale(1.15)
+    &_991
+        display: none
+    &_active
+        transition: max-width 0s 0s
+        max-width: 660px
+    &.animate
+        animation: animateHeader 0.5s forwards
+    &__container
+        max-width: 280px
+    &__logo
+        max-width: 200px
+        width: 100%
+        max-height: 56px
+        object-fit: cover
+        &-mask-gradient, &-circle-gradient
+            &-start
+                transition: all 0.3s
+            &-finish
+                transition: all 0.3s
+        @media (min-width: 992px)
+            &:hover
+                .header__logo
+                    &-mask-gradient, &-circle-gradient
+                        &-start
+                            stop-color: #FFD300
+                        &-finish
+                            stop-color: #FD3256
+        &-wrapper
+            padding: 30px 20px 30px 60px
+            height: 12vh
+            height: calc(var(--vh, 1vh) * 12)
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+            background-color: $blueZodiak
+        &-link
+            max-width: 100%
+            max-height: 100%
+    &__activity
+        display: inline-block
+        font-size: 13px
+        line-height: 19px
+        color: $white
+        &-wrapper
+            padding: 3px 20px 3px 60px
+            width: 100%
+            height: 4.8vh
+            background-color: $blueZodiak
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+    &__info
+        padding: 30px 26px 40px 60px
+        height: 47.2vh
+        height: calc(var(--vh, 1vh) * 47.2)
+        background-color: $blueZodiak
+        overflow-y: hidden
+        @include scrollbar
+    &__flex
+        display: flex
+        column-gap: 15px
+        align-items: center
+    &__catalogue
+        &-link
+            @include blueBtn
+    &__open
+        display: flex
+        flex-direction: column
+        justify-content: center
+        width: 39px
+        height: 50px
+        background-color: transparent
+        border: none
+        cursor: pointer
+        @media (min-width: 992px)
+            &:hover
+                span
+                    &:nth-child(2)
+                        width: 100%
+        span
+            height: 3px
+            background-color: $white
+            &:nth-child(1)
+                width: 39px
+            &:nth-child(2)
+                margin-top: 6px
+                max-width: 39px
+                width: 70%
+                transition: width 0.2s, opacity 0.2s 
+    &__personal
+        // display: flex
+        display: none
+        align-items: center
+        column-gap: 20px
+        margin-top: 22px
+        &-link
+            @media (min-width: 992px)
+                &:hover
+                    // &::after
+                    //     transform: scale(1.1)
+                    .header__personal-icon
+                        transform: scale(1.1)
+                &:active
+                    .header__personal-icon
+                        opacity: 0.5
+            &_cart
+                position: relative
+                margin-top: -1px
+                // &::after
+                //     content: ''
+                //     position: absolute
+                //     top: 0
+                //     right: 0
+                //     width: 14px
+                //     height: 14px
+                //     background-color: $white
+                //     border-radius: 50%
+                //     transition: transform 0.2s
+        &-icon
+            transition: transform 0.2s
+    &__nav
+        margin-top: 30px
+    &__list
+        row-gap: 20px
+        &-item
+            &:not(:first-child)
+                margin-top: 20px
+        &-link
+            color: $white
+            @include hoverUnderline
+
+.menu
+    position: absolute
+    top: 0
+    left: 0
+    transform: translateX(-100%)
+    max-width: 660px
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    background-color: $white
+    opacity: 0
+    transition: transform 0.5s, opacity 0.4s
+    z-index: 4
+    &_active
+        transition: transform 0.5s, opacity 0.4s
+        transform: translateX(0)
+        opacity: 1
+    &__logo
+        max-width: 200px
+        width: 100%
+        max-height: 56px
+        &-wrapper
+            padding: 40px 60px 26px 60px
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2)
+    &__info
+        display: flex
+        flex-direction: column
+        padding: 36px 60px 40px 60px
+        height: calc(100vh - 199px)
+        height: calc(var(--vh, 1vh) * 100 - 199px)
+    &__close
+        width: 40px
+        height: 40px
+        background: url('../../img/blocks/header/icons/menu-close.svg') center center/cover no-repeat
+        background-color: transparent
+        border: none
+        cursor: pointer
+    &__nav
+        margin-top: 30px
+    &__list
+        display: grid
+        grid-template-columns: repeat(2, auto)
+        gap: 30px
+    &__left--start .menu__item a
+        text-align: left
+        width: fit-content
+        
+    &__list-name
+        font-size: 28px
+        font-weight: 600
+        margin-bottom: 20px
+    &__item
+        &-link
+            font-weight: 400
+            font-size: 14px
+            line-height: 22px
+            margin-bottom: 10px
+            text-transform: uppercase
+            @include hoverUnderline
+            &::after
+                background-color: rgba(0, 0, 0, 0.2)
+            @media (min-width: 992px)
+                &:hover
+                    &::after
+                        background-color: $black
+    &__call
+        position: relative
+        margin-top: 72px
+        padding-left: 65px
+        font-weight: 400
+        font-size: 40px
+        line-height: 56px
+        color: $blueZodiak
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 0
+            width: 35px
+            height: 35px
+            background: url('../../img/blocks/header/icons/call.svg') center center/cover no-repeat
+    &__agatech
+        &-wrapper
+            display: flex
+            align-items: center
+            column-gap: 30px
+            margin-top: auto
+        &-text
+            font-weight: 400
+            font-size: 14px
+            line-height: 18px
+            letter-spacing: 0.05em
+            color: $blueZodiak
+        &-logo
+            max-width: 97px
+            width: 100%
+            max-height: 30px
+            object-fit: cover
+
+@import '../blocks-media/_header-media'

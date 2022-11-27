@@ -1,0 +1,117 @@
+@media (max-width: 1919px)
+    .tabs
+        .tabs
+            &__swiper
+                // padding: 0 90px
+                &-arrow
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    width: 9px
+                    height: 18px
+                    background-color: transparent
+                    background-position: center
+                    background-size: cover
+                    background-repeat: no-repeat
+                    &_next
+                        right: 0
+                        background-image: url('../../img/pages/catalogue/icons/arrow-right.svg')
+                    &_prev
+                        left: 0
+                        background-image: url('../../img/pages/catalogue/icons/arrow-left.svg')
+        .tabcontent
+            &__item
+                padding: 0 90px
+        .short-list
+            display: flex
+            gap: 0
+            &__article
+                max-width: unset
+
+@media (max-width: 1599px) 
+    //
+
+@media (max-width: 1439px) 
+    .catalogue
+        &__list
+            grid-template-columns: repeat(4, 1fr)
+            row-gap: 100px
+            margin-top: 105px
+
+    .tabs
+        .tabcontent
+            &__list
+                margin-top: 40px
+        
+@media (max-width: 1199px)
+    .tabs
+        .tabcontent
+            &__list
+                margin-top: 30px
+            &__item
+                padding: 0 25px
+    
+@media (max-width: 991px)
+    .catalogue
+        padding-top: 60px!important
+        &__item
+            margin-bottom: 0
+    .tabs
+        &__swiper
+            &-arrow
+                display: none
+        .tabcontent
+            &__item
+                padding: 0
+    .banner
+        margin: 0 -30px
+
+@media (max-width: 767px) 
+    .banner
+        margin: 0 -20px
+    .catalogue__item
+        margin-bottom: -70px
+    .catalogue__link::before
+        width: 30px
+        height: 30px
+        top: -40px
+    .catalogue__list
+        margin-bottom: 90px
+
+
+    .tabs
+        .tabheader
+            &__list
+                column-gap: 15px
+            &__item
+                &:first-child .tabheader__button::after
+                    width: 100%
+                &:last-child .tabheader__button::after
+                    left: 0
+                    width: 100%
+            &__button
+                font-size: 18px
+                line-height: 22px
+                &::after
+                    left: 0
+                    width: 100%
+        .short-list
+            &__article
+                padding: 10px
+
+@media (max-width: 639px)
+    .catalogue
+        &__list
+            grid-template-columns: repeat(2, 1fr)
+        
+@media (max-width: 575px)
+    .short-list
+        &__img
+            max-width: 130px
+        &__flex
+            margin-top: 15px
+    .banner
+        margin: 0 -10px
+        &__img
+            height: 300px
+            object-position: center

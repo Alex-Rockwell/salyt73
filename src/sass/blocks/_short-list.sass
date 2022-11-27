@@ -1,0 +1,190 @@
+.short-list
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 40px
+    top: 0
+    left: 0
+    margin-top: 30px
+
+    &_active
+        position: static
+        opacity: 1
+        pointer-events: unset
+        transition: opacity 0.5s
+    &__article
+        position: relative
+        display: flex
+        flex-direction: column
+        padding: 10px 20px
+        width: 100%
+        height: 310px
+        border: 1px solid rgba(17, 37, 95, 0.3)
+    &__title
+        max-width: 80%
+        width: 100%
+        font-weight: 800
+        font-size: 24px
+        line-height: 29px
+        text-transform: uppercase
+    &__label
+        position: absolute
+        top: 0
+        right: 0
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 70px
+        height: 40px
+        text-align: center
+        &_sale
+            font-size: 14px
+            line-height: 14px
+            color: $white
+            text-transform: uppercase
+            background-color: $red
+        &_new
+            font-size: 16px
+            line-height: 24px
+            color: $black
+            background-color: $gold
+        &_hit
+            font-size: 14px
+            line-height: 14px
+            color: $black
+            background-color: #32f845
+    &__category
+        display: inline-block
+        margin-top: 5px
+        color: $silverChalice
+    &__wrapper
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: auto
+    &__img
+        max-width: 155px
+        width: 100%
+        max-height: 140px
+        object-fit: cover
+    &__list
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        &-item
+            font-weight: 500
+            font-size: 10px
+            line-height: 15px
+            &:first-child
+                margin-top: 10px
+            &:not(:first-child)
+                margin-top: 20px
+            &-text
+                display: inline-block
+                position: relative
+                font-size: 13px
+                line-height: 15px
+                padding-right: 35px
+                &::after
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    right: 0
+                    width: 30px
+                    height: 30px
+                    background-position: center center
+                    background-size: cover
+                    background-repeat: no-repeat
+                &_charges
+                    &::after
+                        background-image: url('../../img/pages/category/icons/charges.svg')
+                &_duration
+                    &::after
+                        background-image: url('../../img/pages/category/icons/duration.svg')
+                &_height
+                    &::after
+                        background-image: url('../../img/pages/category/icons/height.svg')
+                &_effects
+                    &::after
+                        background-image: url('../../img/pages/category/icons/effects.svg')
+    &__flex
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-top: 5px
+    &__price
+        display: flex
+        flex-direction: column
+        align-items: baseline
+        &-text
+            font-weight: 800
+            font-size: 24px
+            line-height: 28px
+            color: $blueZodiak
+            &_new
+                color: $red
+            &_old
+                position: relative
+                display: inline-block
+                font-weight: 600
+                font-size: 18px
+                line-height: 18px
+                color: $silverChalice
+                &::before
+                    content: ''
+                    position: absolute
+                    bottom: 9px
+                    left: 0
+                    transform: rotate(-4deg)
+                    width: 100%
+                    height: 2px
+                    background-color: $red
+    &__buttons
+        // display: flex
+        display: none
+        &-button
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 60px
+            height: 50px
+            border: 1px solid $blueZodiak
+            transition: background-color 0.2s
+            &_cart
+                background-color: $blueZodiak
+                border-right: none
+                @media (min-width: 992px)
+                    &:hover
+                        background-color: $white
+                        .short-list__buttons-img_cart path
+                            stroke: $blueZodiak
+                &_active
+                    @media (min-width: 992px)
+                        &:hover
+                            background-color: $blueZodiak
+                    .short-list__buttons-img
+                        &_cart 
+                            display: none
+                        &_check
+                            display: block
+            &_favourite
+                background-color: $white
+                &_active
+                    .short-list__buttons-img_favourite path
+                        stroke: $red
+                        fill: $red
+        &-img
+            height: 21px
+            object-fit: cover
+            path
+                transition: stroke 0.2s, fill 0.2s
+            &_cart
+                width: 18px
+            &_favourite
+                width: 22px
+                path
+                    fill: $white
+            &_check
+                display: none
+
+@import '../blocks-media/_short-list-media'

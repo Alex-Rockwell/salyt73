@@ -1,0 +1,109 @@
+@media (max-width: 991px)
+    .modal
+        &__container
+            max-width: 90vw
+
+    .review__modal
+        .modal
+            &__container
+                padding: 70px 30px 50px 30px
+            &__form
+                &-submit
+                    width: 100%
+        
+    .form__modal
+        .modal
+            &__list
+                grid-template-columns: repeat(3, 1fr)
+
+@media (max-width: 767px) 
+    .modal
+        &__container
+            max-width: 100vw
+            max-height: 100vh
+            max-height: calc(var(--vh, 1vh) * 100)
+            height: 100vh
+            height: calc(var(--vh, 1vh) * 100)
+    .more__modal
+        .modal
+            &__info
+                height: 100%
+            &__contacts
+                grid-template-columns: repeat(2, 1fr)
+    .review__modal
+        .modal
+            &__container
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+    .form__modal
+        #inputOutput
+                display: none
+        .modal
+            &__contact-info
+                display: none !important
+            &__user-phone + .modal__text
+                display: none
+            &__message_active
+                transform: translateX(0)
+            &__item-wrapper
+                background-color: rgba(255,255,255,.1)
+                border: 1px solid transparent
+                border-radius: 5px
+            &__date
+                line-height: 24px
+                font-size: 24px
+            &__container
+                min-width: 320px
+                max-width: 320px
+                padding: 20px
+            &__form
+                height: 470px
+            &__item
+                &-wrapper
+                    padding: 4px 9px
+                &-title
+                    font-size: 12px
+                    line-height: 20px
+            &__user
+                &-name, &-phone
+                    max-width: 100%
+        
+@media (max-width: 575px)
+    .more__modal
+        .modal
+            &__dev
+                font-size: 18px
+                line-height: 27px
+            &__info
+                padding: 20px
+            &__contacts
+                grid-template-columns: 1fr
+
+    .review__modal
+        .modal
+            &__container
+                padding: 70px 10px 50px 10px
+            &__user
+                flex-wrap: wrap
+                row-gap: 20px
+                &-name, &-surname
+                    max-width: 100%
+
+    .form__modal
+        .modal
+            &__container
+                padding: 50px 10px 
+            &__item
+                &-picture
+                    display: none
+            &__list
+                grid-template-columns: 1fr
+                row-gap: 15px
+                width: 100%
+            &__footer
+                column-gap: 10px
+            &__step
+                font-size: 11px
+                line-height: 15px

@@ -1,0 +1,176 @@
+@import '../style'
+
+@import '../blocks/_breadcrumbs'
+@import '../blocks/_short-list'
+@import '../blocks/_stages'
+@import '../blocks/_banner'
+@import '../blocks/_subscribe'
+
+.catalogue
+    &__list
+        display: grid
+        grid-template-columns: repeat(8, 1fr)
+        gap: 17px
+        margin-top: 125px
+    &__name
+        font-size: 24px
+        font-weight: 600
+        margin-top: 30px
+        margin-bottom: -20px
+    &__item
+        margin-bottom: 60px
+        transition: 0.3s
+        &:hover
+            transform: scale(1.15)
+    &__link
+        position: relative
+        width: 100%
+        text-align: center
+        line-height: 16px
+        &::before
+            content: ''
+            position: absolute
+            top: -75px
+            left: 50%
+            transform: translateX(-50%)
+            width: 56px
+            height: 56px
+            background-position: center
+            background-size: cover
+            background-repeat: no-repeat
+        &_gender
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/1.svg')
+        &_battery
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/2.svg')
+        &_petards
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/3.svg')
+        &_rim
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/4.svg')
+        &_bengal
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/5.svg')
+        &_rocket
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/6.svg')
+        &_hlop
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/7.svg')
+        &_nazem
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/8.svg')
+        &_svechi
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/9.svg')
+        &_balls
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/10.svg')
+        &_col-smoke
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/11.svg')
+        &_prof
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/12.svg')
+        &_pyro
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/13.svg')
+        &_wedd
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/14.svg')
+        &_heavy
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/15.svg')
+        &_cold
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/16.svg')
+        &_fire
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/17.svg')
+        &_bengals
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/18.svg')
+        &_colored-smoke
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/19.svg')
+        &_cold-fountains
+            &::before
+                background-image: url('../../img/pages/catalogue/category/icons/cold-f.svg')
+    
+
+        
+.tabs
+    .tabheader
+        &__list
+            display: flex
+            column-gap: 100px
+            padding-bottom: 15px
+            border-bottom: 1px solid $silverChalice
+        &__item
+            &:first-child .tabheader__button::after
+                left: 0
+                width: 130%
+            &:last-child .tabheader__button::after
+                left: -30%
+                width: 130%
+        &__button
+            position: relative
+            font-weight: normal
+            font-size: 30px
+            line-height: 36px
+            text-transform: uppercase
+            &::after
+                content: ''     
+                position: absolute
+                left: -60%
+                bottom: -16px
+                width: 220%
+                height: 2px
+                background-color: $blueZodiak
+                opacity: 0
+                transition: opacity 0.3s
+            &_active
+                &::after
+                    opacity: 1
+    .tabcontent
+        &__list
+            position: relative
+            margin-top: 50px
+        &__item
+            position: absolute
+            top: 0
+            left: 0
+            transform: translateY(-100%)
+            left: 0
+            max-width: 100%
+            width: 100%
+            opacity: 0
+            pointer-events: none
+            z-index: 1
+            &_active
+                position: static
+                transform: translateY(0)
+                opacity: 1
+                pointer-events: unset
+                transition: opacity 0.75s
+    .short-list
+        display: flex
+        margin-top: 0
+        position: static
+        opacity: 1
+        pointer-events: unset
+        gap: 0
+        &__article
+            max-width: 310px
+
+.show
+    &__descr
+        margin-top: 50px
+        max-width: 740px
+        width: 100%
+    &__bold
+        font-weight: 700
+                
+@import '../pages-media/_catalogue-media'

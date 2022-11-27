@@ -1,0 +1,526 @@
+@import '../style'
+
+@import '../blocks/_breadcrumbs'
+@import '../blocks/_short-list'
+@import '../blocks/_modal'
+
+.category
+    .short-list__item
+        position: relative
+        transition: .5s
+        max-width: 330px
+    .short-list__item:hover .card__details
+        transform: perspective(2000px) rotateY(0deg)
+        opacity: 1!important     
+    .card__details
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: #071b55
+        transition: .5s
+        transform-origin: left
+        transform: perspective(2000px) rotateY(-90deg)
+        padding: 20px
+        color: white
+    &__title
+        word-break: break-all
+    &__buttons
+        display: flex
+        justify-content: space-between
+        margin-top: 90px
+    &__list
+        position: relative
+    &__item
+        top: 0
+        left: 0
+        z-index: 1
+        &_active
+            position: static
+            opacity: 1
+            pointer-events: unset
+            transition: opacity 0.75s
+    &__descr
+        margin-top: 30px
+        max-width: 800px
+    &__subtitle
+        margin-top: 30px
+    &__text
+        &:not(:first-child)
+            margin-top: 15px
+    &__sublist
+        padding-left: 20px
+        list-style-type: disc
+    .select
+        position: relative
+        width: 100%
+        &_active 
+            .select__body
+                display: block
+            .select__header::after
+                transform: translateY(-50%) rotate(180deg)
+        &__header
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                right: 0
+                width: 15px
+                height: 10px
+                background: url('../../img/pages/category/icons/select-arrow.svg') center center/cover no-repeat
+                pointer-events: none
+                transition: transform 0.35s
+        &__current
+            padding-bottom: 5px
+            width: 100%
+            text-align: left    
+            font-weight: 600
+            font-size: 18px
+            line-height: 27px
+            color: $black
+            border-bottom: 1px solid $black
+        &__body
+            display: none
+            position: absolute
+            top: 33px
+            left: 0
+            padding: 20px 10px
+            width: 100%
+            background-color: #f2f2f2
+            z-index: 3
+        &__item
+            &:not(:first-child)
+                margin-top: 15px
+            &-button
+                position: relative
+                padding-left: 45px
+                width: 100%
+                text-align: left
+                background-color: white
+                transition: font-weight 0.2s
+                line-height: 16px
+                transition: .5s
+                &:hover
+                    transform: scale(1.05)
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    left: 0
+                    width: 56px
+                    height: 56px
+                    background-position: center
+                    background-size: cover
+                    background-repeat: no-repeat
+                &_gender
+                    margin-bottom: 90px
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/1.svg')
+                &_battery
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/2.svg')
+                &_petard
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/3.svg')
+                &_rim
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/4.svg')
+                &_bengal
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/5.svg')
+                &_rocket
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/6.svg')
+                &_hlop
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/7.svg')
+                &_nazem
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/8.svg')
+                &_svechi
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/9.svg')
+                &_balls
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/10.svg')
+                &_col-smoke
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/11.svg')
+                &_cold-fountains
+                    &::before
+                        background-image: url('../../img/pages/catalogue/category/icons/cold-f.svg')
+
+    .select-desk
+        .select__header:after
+            display: none
+        .select__header
+            height: 0
+        .select__current
+            visibility: hidden
+            opacity: 0
+            font-size: 0
+            height: 0
+            padding: 0
+        &__wrapper
+            display: grid
+            grid-template-columns: repeat(8, 1fr)
+            width: calc(600px + (1400 - 600) * ((100vw - 991px)/ (1920 - 991)))
+        .select__item-button
+            text-align: center
+            padding: 0
+            display: flex
+            justify-content: center
+            margin-bottom: 90px
+            &:before
+                content: ""
+                position: absolute
+                top: -70px
+                transform: translateX(-50%)
+                left: 50%
+                width: 56px
+                height: 56px
+                background-position: center
+                background-size: cover
+                background-repeat: no-repeat
+
+    .view
+        &__list
+            display: flex
+            column-gap: 40px
+        &__item
+            &-button
+                @media (min-width: 992px)
+                    &:hover .view__item-img rect
+                        fill: $black
+                &_active
+                    .view__item-img rect
+                        fill: $black
+            &-img
+                height: 25px
+                &_main
+                    width: 30px
+                &_short
+                    width: 41px
+                rect
+                    fill: $silverChalice
+                    transition: fill 0.2s                  
+    .main-list
+        position: absolute
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        justify-items: center
+        gap: 30px
+        top: 0
+        transform: translateY(-100%)
+        left: 0
+        margin-top: 30px
+        opacity: 0
+        z-index: 1
+        pointer-events: none
+        &_active
+            position: static
+            transform: translateY(0)
+            opacity: 1
+            pointer-events: unset
+            transition: opacity 0.75s
+        &__item
+            width: 100%
+            height: 580px
+            &_active
+                .front
+                    transform: rotateY(180deg) !important
+                .back
+                    transform: rotateY(360deg) !important
+            // &:first-child
+            //     .back
+            //         transform: rotateY(360deg) !important
+        &__article
+            position: relative 
+            height: 100%
+        .front, .back
+            transition: transform 1s
+            backface-visibility: hidden
+            height: 100%
+        .front
+            position: relative
+            &__img
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+                z-index: 1
+            &__flex
+                position: relative
+                display: flex
+                justify-content: space-between
+                align-items: flex-end
+                padding: 20px
+                height: 100%
+                z-index: 2
+            &__wrapper
+                max-width: 69%
+                width: 100%
+            &__price
+                display: flex
+                flex-direction: column
+                align-items: baseline
+                color: $white
+                &-text
+                    font-weight: 600
+                    font-size: 22px
+                    line-height: 26px
+                    &_new
+                        color: $white
+                    &_old
+                        position: relative
+                        display: inline-block
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 22px
+                        color: $silverChalice
+                        &::before
+                            content: ''
+                            position: absolute
+                            bottom: 9px
+                            left: 0
+                            transform: rotate(-4deg)
+                            width: 100%
+                            height: 2px
+                            background-color: $red
+            &__title
+                font-size: 24px
+                line-height: 36px
+                text-transform: uppercase
+                color: $white
+            &__list
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+            &__item
+                font-size: 10px
+                line-height: 15px
+                color: $white
+                &:not(:first-child)
+                    margin-top: 25px
+                &-text
+                    position: relative
+                    display: inline-block
+                    padding-right: 35px
+                    &::after
+                        content: ''
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-50%)
+                        right: 0
+                        width: 30px
+                        height: 30px
+                        background-position: center 
+                        background-size: cover
+                        background-repeat: no-repeat
+                    &_charges
+                        &::after
+                            background-image: url('../../img/pages/category/icons/charges.svg')
+                    &_duration
+                        &::after
+                            background-image: url('../../img/pages/category/icons/duration.svg')
+                    &_height
+                        &::after
+                            background-image: url('../../img/pages/category/icons/height.svg')
+                    &_effects
+                        &::after
+                            background-image: url('../../img/pages/category/icons/effects.svg')
+        .back
+            position: absolute
+            display: flex
+            flex-direction: column
+            top: 0
+            left: 0
+            transform: rotateY(180deg)
+            padding: 10px 20px 10px 20px
+            width: 100%
+            max-height: 580px
+            border: 1px solid rgba(17, 37, 95, 0.3)
+            &__title
+                font-weight: 800
+                font-size: 24px
+                line-height: 33px
+            &__category
+                display: inline-block
+                color: $silverChalice
+            &__wrapper
+                display: flex
+                justify-content: space-between
+                margin-top: auto
+            &__img
+                max-width: 100%
+                max-height: 190px
+                object-fit: cover
+            &__btns
+                display: flex
+                flex-direction: column
+                align-items: center
+                padding-right: 3px
+                &-item
+                    &:not(:first-child)
+                        margin-top: 22px
+                &-link
+                    width: 100%
+                &-btn
+                    display: inline-block
+                    position: relative
+                    padding-top: 53px
+                    width: 100%
+                    font-size: 12px
+                    line-height: 18px
+                    text-transform: uppercase
+                    text-align: center
+                    background-color: $white
+                    &::before
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 50%
+                        transform: translateX(-50%)
+                        width: 50px
+                        height: 50px
+                        background-position: center 
+                        background-size: cover
+                        background-repeat: no-repeat
+                    &_video
+                        &::before
+                            background-image: url('../../img/pages/category/icons/video.svg')
+                        &:hover
+                            &::before
+                                background-image: url('../../img/pages/category/icons/video-hover.svg')
+                    &_no-video
+                        display: inline-block
+                        padding-right: 40px     
+                        pointer-events: none
+                        &::before
+                            background-image: url('../../img/pages/category/icons/no-video.svg')
+                    &_photo
+                        &::before
+                            background-image: url('../../img/pages/category/icons/photo.svg')
+                        &:hover
+                            &::before
+                                background-image: url('../../img/pages/category/icons/photo-hover.svg')
+                    &_no-photo
+                        display: inline-block
+                        padding-right: 40px     
+                        pointer-events: none
+                        &::before
+                            background-image: url('../../img/pages/category/icons/no-photo.svg')
+            &__list
+                margin-top: 15px
+            &__item
+                display: flex
+                justify-content: space-between
+                padding: 5px 0
+                border-bottom: 1px solid $silverChalice
+                &:first-child
+                    border-top: 1px solid $silverChalice
+                &-value
+                    text-align: right
+            &__flex
+                display: flex
+                justify-content: space-between
+                align-items: flex-end
+                margin-top: 25px
+                &_secondary
+                    margin-top: 5px
+            &__price
+                display: flex
+                flex-direction: column
+                align-items: baseline
+                &-text
+                    font-weight: 800
+                    font-size: 24px
+                    line-height: 28px
+                    color: $blueZodiak
+                    &_new
+                        color: $red
+                    &_old
+                        position: relative
+                        display: inline-block
+                        font-weight: 600
+                        font-size: 16px
+                        line-height: 22px
+                        color: $silverChalice
+                        &::before
+                            content: ''
+                            position: absolute
+                            bottom: 9px
+                            left: 0
+                            transform: rotate(-4deg)
+                            width: 100%
+                            height: 2px
+                            background-color: $red
+            &__amount
+                font-size: 14px
+                line-height: 21px
+                text-transform: uppercase
+                color: $silverChalice
+            &__buttons
+                display: flex
+                margin-top: 6px
+                width: 100%
+                height: 50px
+                border: 1px solid $blueZodiak
+            &__more
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 100%
+                font-weight: 600
+                font-size: 14px
+                line-height: 17px
+                text-transform: uppercase
+                color: $white
+                background-color: $blueZodiak
+                @include animateFill
+                &::before
+                    transition: width 0.4s, height 0.4s
+                &:hover
+                    &::before
+                        width: 700px
+                        height: 700px
+                        transition: width 0.8s, height 0.8s
+            &__favourite
+                // display: flex
+                display: none
+                justify-content: center
+                align-items: center
+                width: 60px
+                background-color: $white
+                border-left: 1px solid $blueZodiak
+                &-img
+                    width: 22px
+                    height: 21px
+                    object-fit: cover
+                    path
+                        fill: $white
+                        transition: stroke 0.2s, fill 0.2s
+                &_active
+                    .back__favourite-img path
+                        stroke: $red
+                        fill: $red
+    &__more
+        @include whiteBtn
+
+.tabs__item
+    display: none
+
+.tabs__item.active
+    display: block
+
+            
+@import '../pages-media/_category-media'

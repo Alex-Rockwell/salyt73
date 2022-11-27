@@ -1,0 +1,68 @@
+.subscribe
+    padding-top: 75px
+    &__wrapper
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+    &__list
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        max-width: 540px
+        &_left
+            grid-column: 1 / 2
+        &_right
+            grid-column: 3 / 4
+    &__text
+        position: relative
+        padding: 0 15px
+        max-width: 390px
+        width: 100%
+        font-weight: 700
+        font-size: 40px
+        line-height: 56px
+        text-align: center
+        &::before
+            content: ''
+            position: absolute
+            top: -68px
+            left: 50%
+            transform: translateX(-50%)
+            width: 68px
+            height: 40px
+            background: url('../../img/blocks/subscribe/icons/vk.svg') center center/cover no-repeat
+        &-wrapper
+            display: flex
+            grid-column: 2 / 3
+            justify-content: center
+            align-items: center
+    &__link
+        position: relative
+        font-weight: inherit
+        font-size: inherit
+        line-height: inherit
+        background: linear-gradient(95.61deg, #FF00C7 0%, #7000FF 98.87%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        word-break: break-all
+        &::after
+            content: ''
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: 2px
+            background: linear-gradient(95.61deg, #FF00C7 0%, #7000FF 98.87%)
+        @media (min-width: 992px)
+            &:hover
+                &::after
+                    display: none
+    &__item
+        max-width: 270px
+        width: 100%
+        max-height: 270px
+        &-img
+            display: flex
+            max-width: 100%
+            max-height: 100%
+
+    
+@import '../blocks-media/_subscribe-media'

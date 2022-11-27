@@ -1,0 +1,53 @@
+@import '../style'
+
+@import '../blocks/_breadcrumbs'
+@import '../blocks/_modal'
+
+.reviews
+    padding-right: 315px
+    &__flex
+        display: flex
+        justify-content: space-between
+        align-items: baseline
+        column-gap: 50px
+    &__button
+        font-weight: 700
+        color: $blueZodiak
+        @include hoverUnderlineBlue
+    &__list
+        margin-top: 50px
+        padding-left: 100px
+    &__item
+        display: flex
+        justify-content: space-between
+        column-gap: 60px
+        padding: 20px 0 30px 0
+        border-bottom: 1px solid $silverChalice
+        &:first-child
+            border-top: 1px solid $silverChalice
+    &__author
+        max-width: 180px
+        width: 100%
+    &__name
+        display: inline-block
+        width: 100%
+        font-weight: 700
+        font-size: 24px
+        line-height: 34px
+    &__date
+        margin-top: 10px
+        width: 100%
+        color: $silverChalice
+    &__content
+        width: 100%
+    &__subtitle
+        font-weight: 400
+        font-size: 24px
+        line-height: 29px
+        text-transform: uppercase
+    &__descr
+        margin-top: 15px
+    &__more
+        @include whiteBtn
+
+@import '../pages-media/_reviews-media'  

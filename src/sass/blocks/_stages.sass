@@ -1,0 +1,35 @@
+.stages
+    &__list
+        margin-top: 50px
+        display: grid
+        grid-template-columns: minmax(auto, 335px) minmax(auto, 460px) minmax(auto, 400px) 
+        column-gap: 70px
+        row-gap: 70px
+    &__item
+        padding-left: 10px
+        border-left: 1px solid $silverChalice
+        &-number
+            font-weight: 300
+            font-size: 96px
+            line-height: 70px
+            text-align: center
+            color: $blueZodiak
+        &-title
+            margin-top: 30px
+            font-weight: 400
+            font-size: 20px
+            line-height: 24px
+            text-transform: uppercase
+            color: $blueZodiak
+        &-descr
+            margin-top: 10px
+            padding-bottom: 5px
+            max-width: 405px
+            width: 100%
+        &-link
+            margin-top: 5px
+            font-weight: 700
+            text-decoration: underline
+
+
+@import '../blocks-media/_stages-media'

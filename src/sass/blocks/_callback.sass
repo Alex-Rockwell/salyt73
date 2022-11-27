@@ -1,0 +1,154 @@
+.callback
+    padding: 25px 20px 25px 60px
+    width: 100%
+    height: 36vh
+    height: calc(var(--vh, 1vh) * 36)
+    background-color: $downriver
+    overflow-y: auto
+    @include scrollbar
+    &__wrapper
+        height: 154px
+    &__title
+        text-transform: uppercase
+        color: $white
+        &_inactive
+            display: none
+    &__form
+        margin-top: 15px
+        &_inactive
+            display: none
+        &-container
+            position: relative
+        &-input
+            padding: 10px 30px 10px 0
+            width: 100%
+            font-weight: 400
+            font-size: 14px
+            line-height: 21px
+            color: $white
+            background-color: transparent
+            border: 1px solid transparent
+            border-bottom: 1px solid $white
+            &::placeholder
+                color: $silverChalice
+            &:focus
+                width: calc(100% - 20px)
+                margin-left: -10px
+                margin-right: 20px
+                padding-left: 10px
+                padding-right: 40px
+                outline: none
+                border: 1px solid $white
+                border-radius: 5px
+        &-submit
+            position: absolute
+            top: 13px
+            right: 0
+            background-color: transparent
+            border: none
+            cursor: pointer
+        &-arrow
+            path
+                transition: fill 0.2s
+                fill: rgba(255, 255, 255, 0.5)
+            @media (min-width: 992px)
+                &:hover
+                    path
+                        fill: $white
+        &-label
+            display: flex
+            cursor: pointer
+            transition: opacity 0.1s
+            @media (min-width: 992px)
+                &:active
+                    opacity: 0.5
+        &-checkbox
+            &-real:checked + .callback__form-checkbox
+                &-fake
+                    border: 1px solid $white
+                    &::before 
+                        content: ''
+                        position: absolute
+                        top: 48.5%
+                        left: 50%
+                        transform: translate(-50%, -50%)
+                        width: 11px
+                        height: 10px
+                        background: url('../../img/blocks/callback/icons/check.svg') center center/cover no-repeat
+            &-fake
+                position: relative
+                margin-top: 13px
+                width: 15px 
+                height: 15px
+                border-radius: 2px
+                border: 1px solid $silverChalice
+            &-text
+                margin: 10px 0 0 7px
+                max-width: 89%
+                font-weight: 400
+                font-size: 14px
+                line-height: 21px
+                color: $silverChalice
+    &--vk:hover
+        path
+            fill: #07f
+            stroke: #07f
+    &--viber:hover
+        path
+            fill: #7360f2
+            stroke: #7360f2
+    &--wa:hover
+        path
+            fill: #25D366
+            stroke: #25D366
+    &--tg:hover
+        path
+            fill: #0088cc
+            stroke: #0088cc
+    &__social
+        display: flex
+        column-gap: 20px
+        margin-top: 5px
+        &-item
+            display: flex
+            justify-content: center
+            align-items: center
+        &-link
+            @media (min-width: 992px)
+                &:hover
+                    transform: scale(1.05)
+                    .callback__social-icon
+                        transform: scale(1.05)
+                &:active
+                    .callback__social-icon
+                        opacity: 0.5
+        &-icon
+            transition: transform 0.2s   
+    &__message
+        display: none
+        text-transform: uppercase
+        color: $white
+        &_active
+            display: inline-block
+    &__contacts
+        display: flex
+        flex-direction: column
+        align-items: baseline
+        row-gap: 10px
+        margin-top: 10px
+    &__phone, &__mail
+        color: $white
+        @include hoverUnderline
+    &__privacy
+        display: inline
+        font-size: inherit
+        line-height: inherit
+        @media (min-width: 992px)
+            &:hover
+                text-decoration: underline
+            &:active
+                opacity: 0.5
+    
+        
+
+@import '../blocks-media/_callback-media'

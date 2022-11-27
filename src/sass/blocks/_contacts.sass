@@ -1,0 +1,77 @@
+.contacts
+    display: flex
+    flex-direction: column
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    background-color: $white
+    &__wrapper
+        padding: 50px 100px 0 100px
+    &__title
+        overflow: hidden
+        span
+            display: inline-block
+            transform: translateY(100%)
+            font-weight: 700
+            font-size: 40px
+            line-height: 56px
+            color: $blueZodiak
+            opacity: 0
+            &.animate
+                animation: animateFadeInBottom 0.7s 0.25s linear forwards 
+    &__list
+        display: grid
+        grid-template-columns: 265px 235px 185px 175px
+        // grid-template-columns: repeat(2, 1fr)
+        column-gap: 150px
+        row-gap: 30px
+        margin-top: 50px
+    &__item
+        transform: translateY(100px)
+        padding: 3px 0 5px 20px
+        border-left: 1px solid rgba(51, 51, 51, 0.22)
+        opacity: 0
+        &_surova
+            &.animate
+                animation: animateFadeInImg 0.7s 0.25s linear forwards 
+        &_prom
+            &.animate
+                animation: animateFadeInImg 0.7s 0.35s linear forwards 
+        &_tupoleva
+            &.animate
+                animation: animateFadeInImg 0.7s 0.45s linear forwards 
+        &_cherdakli
+            &.animate
+                animation: animateFadeInImg 0.7s 0.55s linear forwards 
+    &__address
+        &-text
+            display: block
+            font-weight: 600
+            font-size: 18px
+            line-height: 27px
+            color: $black
+    &__link
+        @include hoverUnderline
+        &::before
+            background-color: rgba(62, 62, 62, 0.3)
+        &::after
+            background-color: $black
+        &_phone
+            margin-top: 30px
+        &_mail
+            margin-top: 13px
+    &__map
+        // margin-top: 80px
+        margin-top: auto
+        max-width: 100%
+        width: 100%
+        height: 57.5vh
+        height: calc(var(--vh, 1vh) * 57.5)
+        // filter: brightness(0.4) grayscale(1)
+        // transition: filter 0.3s
+        &:hover
+            // filter: brightness(1) grayscale(1)
+    &__more
+        &-wrapper
+            display: none
+
+@import '../blocks-media/_contacts-media'

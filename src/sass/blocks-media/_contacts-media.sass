@@ -1,0 +1,90 @@
+@media (max-width: 1919px)
+    .contacts
+        &__wrapper
+            padding: 50px 70px 0 70px
+        &__list
+            grid-template-columns: repeat(2, 1fr)
+            margin-top: 20px
+
+@media (max-width: 1599px) 
+    .contacts
+        &__wrapper
+            padding: 50px 50px 0 50px
+        &__list
+            column-gap: 120px
+
+@media (max-width: 1439px) 
+    .contacts
+        &__wrapper
+            padding: 50px 30px 0 30px
+        &__list
+            column-gap: 100px
+        
+@media (max-width: 1199px)
+    .contacts
+        &__wrapper
+            padding: 50px 15px 0 15px
+        &__list
+            column-gap: 20px
+        &__item
+            padding-left: 10px
+    
+@media (max-width: 991px)
+    .contacts
+        height: auto
+        &__wrapper
+            padding: 50px 25px 0 25px
+        &__title
+            span
+                transform: translate(0)
+                opacity: 1
+        &__item
+            transform: translate(0)
+            opacity: 1
+        &__map
+            margin-top: 50px
+            height: 500px
+            filter: brightness(1) grayscale(1)
+            
+@media (max-width: 767px) 
+    .contacts
+        &__wrapper
+            padding: 50px 20px 0 20px
+        &__list
+            grid-template-columns: repeat(2, auto)
+            gap: 50px
+        &__item
+            display: flex
+            flex-direction: column
+            align-items: baseline
+        &__map
+            height: 400px
+        
+@media (max-width: 575px)
+    .contacts
+        padding-bottom: 80px
+        &__wrapper
+            padding: 40px 10px 0 10px
+        &__list
+            grid-template-columns: 1fr
+        &__item
+            display: flex
+            flex-direction: column
+            align-items: baseline
+        &__map
+           display: none
+        &__more
+            padding: 17px
+            max-width: 100%
+            width: 100%
+            font-weight: 600
+            font-size: 14px
+            line-height: 17px
+            text-align: center
+            text-transform: uppercase
+            color: $blueZodiak
+            border: 1px solid $blueZodiak
+            &-wrapper
+                display: flex
+                justify-content: center
+                margin: 40px 10px 0 10px 

@@ -1,0 +1,407 @@
+@import '../_style'
+
+@import '../blocks/_breadcrumbs'
+
+.main
+    &.header__small
+        padding-left: 140px
+
+.header
+    &_active
+        z-index: 4
+    &__container
+        &_min
+            max-width: 140px
+    &__active-elem
+        position: relative !important
+        pointer-events: unset !important
+        opacity: 1 !important
+    &__logo
+        position: absolute
+        pointer-events: none
+        opacity: 0
+        &.header__small
+            max-width: 108px
+            max-height: 72px
+        &-wrapper
+            height: 12.2vh
+            height: calc(var(--vh, 1vh) * 12.2)
+            &.header__small
+                padding: 29px 18px 20px 19px
+    &__activity
+        position: absolute
+        pointer-events: none
+        opacity: 0
+        max-width: 165px
+        &-wrapper
+            display: flex
+            justify-content: space-between
+            align-items: center
+    &__minimize
+        position: absolute
+        pointer-events: none
+        opacity: 0
+        width: 15px
+        height: 16px
+        background: url('../../img/blocks/header/icons/minimize.svg') center center/cover no-repeat
+    &__maximize
+        position: absolute
+        pointer-events: none
+        opacity: 0
+        width: 15px
+        height: 16px
+        background: url('../../img/blocks/header/icons/maximize.svg') center center/cover no-repeat
+    &__info
+        &.header__small
+            padding: 50px 0 20px 
+            height: 47vh
+            height: calc(var(--vh, 1vh) * 47)
+            // overflow: auto
+    &__flex
+        &.header__small
+            justify-content: center
+    &__catalogue
+        &-link
+            position: absolute
+            // padding: 0
+            opacity: 0
+            pointer-events: none
+            &_menu
+                position: relative
+                opacity: 1
+                pointer-events: unset
+    &__open
+        &.header__small
+            height: auto
+    &__personal
+        &-item
+            &.header__small
+                height: 21px
+        &-link
+            &.header__small
+                max-width: 100%
+                max-height: 100%
+        &.header__small
+            flex-direction: column
+            align-items: center
+            row-gap: 20px
+            margin: 20px auto 0 auto
+            max-width: 39px
+    &__nav
+        &.header__small
+            margin-top: 15px    
+    &__list
+        row-gap: 0
+        &.header__small
+            display: flex
+            flex-direction: column
+            align-items: center
+        &-item
+            &.header__small
+                display: flex
+                justify-content: center
+                align-items: center
+                &:not(:first-child)
+                    margin-top: 10px
+            &.header__small
+                width: 35px
+                height: 39px
+        &-link
+            &.header__small
+                display: flex
+                justify-content: center
+                align-items: center
+                max-width: 100%
+                max-height: 100%
+                &::after, &::before
+                    display: none
+            span
+                position: absolute
+                pointer-events: none
+                opacity: 0
+                word-break: break-all
+        &-img
+            position: absolute
+            pointer-events: none
+            opacity: 0
+            max-width: 100%
+            max-height: 100%
+            object-fit: cover
+            @media (min-width: 992px)
+                &:hover
+                    transform: scale(1.1)
+                    transition: transform 0.2s
+                &:active
+                    opacity: 0.5
+    .callback
+        &.header__small
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 50px
+        &__wrapper
+            position: absolute
+            pointer-events: none
+            opacity: 0
+        &__form
+            &-btn
+                position: absolute
+                pointer-events: none
+                opacity: 0
+                width: 25px
+                height: 25px
+                background-color: transparent
+            &-icon
+                max-width: 100%
+                max-height: 100%
+                object-fit: cover
+                @media (min-width: 992px)
+                    &:hover
+                        transform: scale(1.1)
+                        transition: transform 0.2s
+                    &:active
+                        opacity: 0.5
+        &__social
+            &.header__small
+                margin-top: 20px
+                flex-direction: column
+                row-gap: 15px
+
+.articles
+    display: flex
+    &__container
+        position: fixed
+        padding: 50px 10px 50px 30px
+        // max-width: 38.2vh
+        max-width: 370px
+        width: 100%
+        max-height: 100vh
+        max-height: calc(var(--vh, 1vh) * 100)
+        height: 100vh
+        height: calc(var(--vh, 1vh) * 100)
+        background-image: url('../../imgwebp/pages/articles/bg/article-1.webp')
+        background-position: center center
+        background-size: cover
+        background-repeat: no-repeat
+        transition: background-image 0.2s
+        z-index: 3
+    .breadcrumbs
+        padding: 0
+        background-color: transparent
+    &__title
+        margin-top: 10px
+        font-weight: 700
+        font-size: 40px
+        line-height: 56px
+        color: $white
+    &__list
+        margin-top: 5px
+        max-height: 80vh
+        overflow-y: auto
+        @include scrollbar
+    &__item
+        &:first-child
+            margin-top: 50px
+        &:not(:first-child)
+            margin-top: 20px
+        &:last-child
+            margin-bottom: 50px
+        &-btn
+            display: inline-block
+            padding-right: 10px
+            font-weight: 400
+            text-transform: uppercase
+            text-align: left
+            background-color: transparent
+            color: $white
+            opacity: 0.5
+            &_active
+                opacity: 1
+    &__tabs
+        padding-left: 370px
+        width: 100%
+        &-item
+            position: absolute
+            top: 0
+            left: 0
+            transform: translateY(-100%)
+            max-width: 100%
+            background-color: $white
+            opacity: 0
+            pointer-events: none
+            &_active
+                position: static
+                transform: translateY(0)
+                opacity: 1
+                pointer-events: unset
+                transition: opacity 0.5s
+    .article
+        padding: 50px 160px 50px 50px
+        &_991
+            display: none
+        &__title
+            font-weight: 800
+            font-size: 24px
+            line-height: 36px
+            color: $blueZodiak
+        &__time
+            margin-top: 10px
+        &__nav
+            margin-top: 30px
+            &-list
+                padding-left: 20px
+            &-item
+                position: relative
+                &:not(:first-child)
+                    margin-top: 15px
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 55%
+                    transform: translateY(-50%)
+                    left: -15px
+                    width: 5px
+                    height: 5px
+                    background-color: $silverChalice
+                    border-radius: 50%
+                    transition: background-color 0.2s
+                @media (min-width: 992px)
+                    &:hover
+                        &::before
+                            background-color: $black
+            &-link
+                transition: color 0.2s
+                color: $silverChalice
+                &-text
+                    padding-bottom: 1px
+                    background-image: linear-gradient(to right,$silverChalice 0,$silverChalice 100%)
+                    background-repeat: repeat-x
+                    background-position: 0 100%
+                    background-size: 100% 1.6px
+                    transition: background-image 1s
+                @media (min-width: 992px)
+                    &:hover
+                        color: $black
+                        & .article__nav-link-text
+                            background-image: linear-gradient(to right,$black 0,$black 100%)
+        &__flex
+            display: flex
+            justify-content: space-between
+            column-gap: 60px
+            margin-top: 100px
+            width: 100%
+            &_intro
+                margin-top: 50px
+        &__info
+            max-width: 47.5%
+            width: 100%
+        &__subtitle
+            font-weight: normal
+            font-size: 30px
+            line-height: 36px
+            text-transform: uppercase
+        &__descr
+            margin-top: 30px
+            p
+                &:not(:first-child)
+                    margin-top: 20px
+            ul
+                padding-left: 20px
+            li
+                list-style: disc
+                &:not(:first-child)
+                    margin-top: 15px
+        &__img
+            display: flex
+            width: 100%
+            max-height: 700px
+            object-fit: cover
+            &_intro
+                max-height: 575px
+        &__warning
+            padding: 20px 100px
+            margin-top: 80px
+            width: 100%
+            font-weight: 600
+            font-size: 18px
+            line-height: 27px
+            text-align: center
+            border-top: 1px solid $silverChalice
+            border-bottom: 1px solid $silverChalice
+        &__gallery
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            justify-content: space-between
+            gap: 20px
+            margin-top: 100px
+            &-link
+                width: 100%
+                height: 100%
+            &-img
+                display: flex
+                max-width: 100%
+                width: 100%
+                max-height: 450px
+                height: 100%
+                object-fit: cover
+        &__buttons
+            margin-top: 58px
+            display: flex
+            justify-content: space-between
+            &-button
+                display: flex
+                align-items: center
+                column-gap: 30px
+                &_inactive
+                    cursor: initial
+                    .article__buttons
+                        &-arrow
+                            cursor: initial
+                            &::before
+                                display: none
+                            @media (min-width: 992px)
+                                &:hover
+                                    .article__buttons-img
+                                        path
+                                            stroke: $blueZodiak
+                        &-text
+                            color: $silverChalice
+            &-text
+                position: relative
+                color: $blueZodiak
+                &_prev
+                    &::after
+                        left: 0
+                &_next
+                    &::after
+                        right: 0
+            &-arrow
+                position: relative
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 60px
+                height: 40px
+                border: 1px solid $blueZodiak
+                @include animateFill
+                &::before
+                    transition: width 0.5s, height 0.5s
+                @media (min-width: 992px)
+                    &:hover
+                        border: 1px solid $blueZodiak
+                        &::before
+                            width: 150px
+                            height: 150px
+                            background-color: $blueZodiak
+                        .article__buttons-img
+                            path
+                                stroke: $white
+            &-img
+                width: 10px
+                height: 20px
+                z-index: 2
+                path
+                    stroke: $blueZodiak
+                    transition: stroke 0.2s
+                    
+@import '../pages-media/articles-media'

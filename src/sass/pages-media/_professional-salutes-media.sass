@@ -1,0 +1,141 @@
+@media (max-width: 1919px)
+    .sorts
+        padding-bottom: 75px
+        &__wrapper
+            padding: 100px 150px 50px 70px
+        &__info
+            max-width: 95%
+
+@media (max-width: 1599px) 
+    .sorts
+        padding-bottom: 50px
+        &__wrapper
+            padding: 100px 120px 50px 50px
+        &__info
+            max-width: 90%
+
+@media (max-width: 1439px) 
+    .sorts
+        &__wrapper
+            padding: 100px 30px 50px 30px
+        &__info
+            max-width: 95%
+    
+    .launch
+        &__title
+            max-width: 570px
+        &__images-swiper
+            .swiper
+                &-button
+                    &-next, &-prev
+                        bottom: 20px
+                    &-next
+                        right: 20px
+                    &-prev 
+                        right: 90px
+        &__figure
+            height: 430px
+        &__figcaption
+            position: absolute
+            left: 20px
+            bottom: 20px
+
+@media (max-width: 1199px)
+    .sorts
+        &__info
+            flex-wrap: wrap
+            max-width: unset
+        &__group
+            max-width: unset
+        &__list
+            &_secondary
+                max-width: unset
+
+    .launch
+        &__title
+            max-width: unset
+        &__link
+            margin-top: 20px    
+            &_1920
+                display: none
+            &_1199
+                display: flex
+        &__figure
+            height: 350px
+
+@media (max-width: 991px)
+    .sorts
+        &__images
+            display: block
+            &-item
+                &::after
+                    display: none
+        
+    .launch
+        &__images
+            &-swiper
+                margin: 50px -30px 0 -30px
+        &__link
+            width: 100%
+
+@media (max-width: 767px) 
+    .sorts
+        &__wrapper
+            padding: 100px 20px 30px 20px
+        &__info
+            margin-top: 40px
+
+    .launch
+        &__title
+            &-text
+                word-break: break-all
+        &__images
+            &-swiper
+                margin: 30px -20px 0 -20px
+        &__figure
+            height: 290px
+
+@media (max-width: 575px)
+    .sorts
+        &__wrapper
+            padding: 80px 10px 30px 10px
+        &__title
+            word-break: break-all
+        &__info
+            margin-top: 20px
+
+    .launch
+        &__text
+            &-swiper
+                width: 240px
+                height: 50px
+                border-radius: 5px
+                .swiper
+                    &-slide
+                        font-size: 30px
+                        line-height: 45px
+        &__images
+            &-swiper
+                margin: 30px -10px -50px -10px
+                padding-bottom: 50px
+                .swiper
+                    &-button
+                        &-next, &-prev
+                            bottom: 0
+                            border: 1px solid $blueZodiak
+                            &::after
+                                font-size: 22px
+                                color: $blueZodiak
+                                z-index: 1
+                        &-next
+                            right: 10px
+                        &-prev
+                            left: 10px 
+        &__figure
+            height: 350px
+        &__figcaption
+            left: 10px
+            right: 10px
+            bottom: 10px
+        &__link
+            margin-top: 90px

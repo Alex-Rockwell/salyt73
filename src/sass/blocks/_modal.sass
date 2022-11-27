@@ -1,0 +1,363 @@
+.modal
+    display: flex
+    justify-content: center
+    align-items: center
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100vh
+    background-color: rgba(0,0,0,.5)
+    overflow: hidden
+    z-index: 10
+    opacity: 0
+    transition-duration: 0.4s
+    pointer-events: none
+    &_active
+        opacity: 1
+        pointer-events: unset
+        .modal__container 
+            transform: translateY(0px)
+            opacity: 1
+    &__container
+        position: relative
+        transform: translateY(-500px)
+        max-width: 900px
+        width: 100%
+        min-height: 600px
+        max-height: 80vh
+        opacity: 0
+        transition-duration: 0.4s
+    &__close
+        position: absolute
+        top: 20px
+        right: 20px
+        font-size: 40px
+        font-weight: 300
+        background-color: transparent
+        border: none
+        cursor: pointer
+    &__text, &__message
+        font-weight: 600
+        font-size: 24px
+        line-height: 36px
+        color: $white
+    &__message
+        display: none
+        text-align: center
+        &_active
+            display: block
+            transform: translateX(130px)
+    &__form
+        &_inactive
+            display: none
+        &-input
+            padding: 13px 15px
+            width: 100%
+            color: $white
+            background-color: $blueZodiak
+            border: 1px solid $white
+            &::placeholder
+                color: rgba(255, 255, 255, 0.4)
+        &-submit
+            display: block
+            margin-top: 20px
+            width: 380px
+            height: 50px
+            font-weight: 600
+            font-size: 14px
+            line-height: 17px
+            text-transform: uppercase
+            color: $blueZodiak
+            background-color: $white
+            border: 1px solid $blueZodiak
+    &__user
+        display: flex
+        justify-content: space-between
+        column-gap: 20px
+        &-name, &-surname, &-phone
+            max-width: 50%
+            width: 100%
+    &__theme
+        margin-top: 20px
+    &__textarea
+        margin-top: 20px
+        min-height: 175px
+        max-height: 350px
+        resize: vertical
+
+.more__modal
+    .modal
+        &__dev
+            padding: 17px 45px 17px 17px
+            width: 100%
+            font-weight: 600
+            font-size: 24px
+            line-height: 36px
+            text-align: center
+            text-transform: uppercase
+            color: $blueZodiak
+            background-color: $white
+        &__close
+            color: $blueZodiak
+        &__info
+            padding: 50px 40px
+            width: 100%
+            min-height: 530px
+            background-color: $blueZodiak
+            overflow: auto
+            &-text
+                font-weight: 600
+                font-size: 24px
+                line-height: 36px
+                color: $white
+        &__list
+            margin-top: 20px
+        &__item
+            &-text
+                color: $white
+            &-link
+                font-size: inherit
+                line-height: inherit
+                color: inherit
+                @include hoverUnderline
+        &__contacts
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            column-gap: 30px
+            row-gap: 40px
+            flex-wrap: wrap
+            margin-top: 20px
+            &-item
+                padding-left: 10px
+                border-left: 1px solid $white
+            &-text
+                display: block
+                font-weight: 600
+                font-size: 18px
+                line-height: 27px
+                color: $white
+
+.review__modal
+    .modal
+        &__container
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            padding: 70px 50px 69px 50px
+            background-color: $blueZodiak
+        &__close
+            color: $white
+        &__text
+            align-self: flex-start
+            &_inactive
+                display: none
+        &__form
+            margin-top: 30px
+            width: 100%
+        
+.form__modal
+    .modal__form
+        #inputOutput
+            position: absolute
+            right: 0
+            top: 0
+            padding: 50px 10px 50px 10px
+            min-width: 300px
+            background: rgba(7, 27, 85, 1)
+            height: 100%
+            .inputOutput__title
+                font-size: 22px
+                font-weight: 600
+                margin-bottom: 25px
+                color: white
+                text-align: center
+            .inputOutput__img
+                margin-bottom: 20px
+            .dateOutput
+                margin-bottom: 10px
+            .inputOutput__wrapper
+                margin-bottom: 10px
+                color: white
+                p
+                    margin-bottom: 15px
+            .checkboxOutput
+                display: none
+                position: relative
+                padding-left: 30px
+            .checkboxOutput:before 
+                position: absolute
+                content: ''
+                top: 50%
+                left: 6px
+                transform: translateY(-50%)
+                width: 10px
+                height: 10px
+                background: white
+                border: 1px solid transparent
+                border-radius: 50%
+            .checkboxOutput--smokE.visible,
+            .checkboxOutput--firE.visible,
+            .checkboxOutput--bengaL.visible,
+            .checkboxOutput--salyT.visible,
+            .checkboxOutput--pyro.visible,
+            .checkboxOutput--colored.visible
+                display: block
+                color: white
+        .modal__form-input:focus-visible
+            outline: none
+            border: 1px solid white
+        .modal__form-input
+            border-bottom: 1px solid white
+            border-top: 1px solid transparent
+            border-right: 1px solid transparent
+            border-left: 1px solid transparent
+        .modal__contact-info
+            width: 100%
+            margin-top: 10px
+            display: flex
+            justify-content: space-between
+        .modal__contact-info-left
+            flex-basis: 35%
+            color: white
+        .modal__contact-info-right
+            flex-basis: 50%
+            color: white
+        .modal__contact-info-tel,
+        .modal__contact-info-mail,
+        .modal__contact-info-address
+            color: white
+        .modal__contact-info-tel--mb
+            margin-bottom: 20px
+        .modal__contact-info-address
+            white-space: nowrap
+            margin-bottom: 15px
+
+    .modal
+        &__container
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            padding: 50px 50px 20px 55px
+            min-height: 650px
+            background: url("../../img/blocks/modal/bg.jpg")
+            min-width: 1000px
+            padding-right: 315px
+        &__close
+            color: $white
+            z-index: 5
+        &__form
+            max-width: 100%
+            height: 540px
+        &__date
+            margin: 40px auto 0 auto
+            background: transparent
+            border: none
+            color: white
+            font-size: 47px
+            line-height: 100px
+            &:focus-visible
+                outline: none
+                border: none
+        &__footer
+            display: flex
+            justify-content: space-between
+            align-items: center
+            column-gap: 20px
+            width: 100%
+            margin-top: auto
+            padding-top: 20px
+            border-top: 1px solid rgba(255, 255, 255, 0.3)
+        &__step
+            color: $white
+        &__list
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            column-gap: 20px
+            row-gap: 40px
+            margin-top: 40px
+        &__item
+            cursor: pointer
+            &-picture
+                display: flex
+            &-img
+                max-width: 200px
+                width: 100%
+                max-height: 130px
+                object-fit: cover
+            &-wrapper
+                display: flex
+                align-items: center
+                column-gap: 10px
+                padding: 4px 10px
+                background-color: rgba(255, 255, 255, 0.5)
+            &-title
+                font-weight: 400
+                color: $white
+        &__checkbox
+            &-real:checked + .modal__checkbox-fake
+                background-color: $white
+            &-fake
+                width: 10px
+                height: 10px
+                border: 1px solid $white
+                border-radius: 50%
+        &__user
+            &-name
+                margin-top: 40px
+            &-phone
+                margin-top: 20px
+    .swiper
+        height: 100%
+        &-container
+            height: 100%
+            display: flex
+            flex-direction: row-reverse
+            .modal__output
+                min-width: 240px
+                padding: 20px
+                color: white
+        &-slide
+            display: flex
+            flex-direction: column
+            align-items: baseline
+    .swiper-button-next, .swiper-button-back, .modal__submit
+        @include transparentBtn
+        top: unset
+        left: unset
+        right: unset
+        margin: 0
+        padding: 16px 20px
+        width: auto
+        height: auto
+        opacity: 0.35
+        cursor: not-allowed
+        pointer-events: none
+        &_enabled
+            opacity: 1 !important
+            cursor: pointer !important
+            pointer-events: auto !important
+        @media (min-width: 992px)
+            &:hover
+                &::after
+                    color: $white
+        &::after
+            padding-left: 20px
+            font-size: 14px
+            z-index: 1
+
+::-webkit-calendar-picker-indicator 
+  color: transparent
+  opacity: 1
+  background: url("../../img/blocks/modal/date.png") no-repeat center
+  background-size: contain
+
+
+#ui-datepicker-div
+    z-index: 10!important
+
+@import '../blocks-media/_modal-media'
+        
+    

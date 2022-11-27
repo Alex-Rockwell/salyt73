@@ -1,0 +1,132 @@
+@media (max-width: 1439px) 
+    .advantages
+        &__item
+            padding: 20px 10px
+            &_safety
+                justify-content: flex-end
+                column-gap: 110px
+                .advantages
+                    &__descr
+                        max-width: 430px
+                    &__img
+                        max-width: 250px
+            &_variety
+                justify-content: flex-start
+                .advantages
+                    &__descr
+                        max-width: 475px
+            &_duration
+                justify-content: flex-end
+                column-gap: 90px
+            &_height
+                justify-content: flex-start
+                column-gap: 100px
+                .advantages
+                    &__img
+                        max-width: 250px
+            &_resistance 
+                justify-content: flex-end
+                column-gap: 30px
+                .advantages
+                    &__descr
+                        max-width: 410px
+        
+@media (max-width: 1199px)
+    .advantages
+        &__item
+            column-gap: 20px
+            padding: 20px 0
+            &_safety
+                .advantages
+                    &__descr
+                        max-width: 400px
+            &_variety
+                .advantages
+                    &__descr
+                        max-width: 335px
+            &_resistance 
+                .advantages
+                    &__descr
+                        max-width: 300px
+
+    .spinners
+        &__descr
+            display: block
+            grid-template-columns: auto
+            grid-template-rows: auto
+            margin-top: 30px
+        &__text
+            display: inline
+            &_left, &_right
+                grid-column: auto
+                grid-row: auto
+            &_bottom
+                display: block
+                margin-top: 20px
+        &__link
+            grid-column: auto
+            grid-row: auto
+
+@media (max-width: 767px) 
+    .advantages
+        &__list
+            margin-top: 40px
+        &__item
+            display: block
+            padding: 10px 0 20px 0
+            &_safety
+                .advantages
+                    &__descr
+                        margin-left: auto
+                        max-width: 460px
+                        text-align: right
+                    &__img
+                        max-width: 300px
+            &_variety
+                .advantages
+                    &__descr
+                        max-width: 520px
+                    &__img
+                        margin-left: auto
+            &_duration
+                .advantages
+                    &__descr
+                        margin-left: auto
+                        max-width: unset
+            &_height
+                .advantages
+                    &__descr
+                        max-width: unset
+                    &__img
+                        margin-left: auto
+            &_resistance 
+                .advantages
+                    &__descr
+                        margin-left: auto
+                        max-width: 460px
+                    &__img
+                        max-width: 300px
+        &__descr
+            font-size: 14px
+            line-height: 20px
+        &__img
+            margin-top: 10px
+    
+    .spinners
+        &__link
+            &_1920
+                display: none
+            &_576
+                display: flex
+                width: 100%
+        
+@media (max-width: 575px)
+    .advantages
+        &__title
+            word-break: break-all
+
+    .spinners
+        &__title
+            word-break: break-all
+        &__img
+            height: 300px

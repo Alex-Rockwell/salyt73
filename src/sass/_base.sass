@@ -1,0 +1,126 @@
+body
+    margin: 0
+    
+*, *::before, *::after
+    box-sizing: border-box
+
+*
+    font-family: 'Inter', sans-serif
+    font-weight: 500
+    font-size: 16px
+    line-height: 24px
+    color: $black
+
+h1, h2, h3, h4, h5, h6
+    margin: 0
+    padding: 0
+    font-size: inherit
+    font-weight: inherit
+    line-height: inherit
+    color: inherit
+
+a
+    display: inline-block
+    color: inherit
+    text-decoration: none
+
+ul, ol
+    list-style: none
+
+img
+    max-width: 100%
+
+p, b, span, button, time, ul, ol, li, figure, blockquote, fieldset, address
+    margin: 0
+    padding: 0
+    font-weight: inherit
+    font-size: inherit
+    line-height: inherit
+    color: inherit
+    letter-spacing: inherit
+    font-style: inherit
+
+strong
+    font-weight: 700
+
+fieldset
+    border: none
+
+button
+    background-color: $white
+    border: none
+    cursor: pointer
+
+time
+    display: inline-block
+
+input[type="date"]::-webkit-calendar-picker-indicator
+    cursor: pointer
+
+input[type="number"] 
+    -moz-appearance: textfield
+    -webkit-appearance: textfield
+    appearance: textfield
+ 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button 
+    display: none
+
+.sr-only
+    position: absolute
+    margin: -1px
+    padding: 0
+    width: 1px
+    height: 1px
+    white-space: nowrap
+    overflow: hidden
+    border: 0
+    clip: rect(0 0 0 0)
+    clip-path: inset(50%) 
+
+.preload
+    display: none
+
+.overlay
+    position: absolute
+    top: 0
+    right: 0
+    width: 100%
+    height: 100vh
+    height: calc(var(--vh, 1vh) * 100)
+    background-color: $downriver
+    z-index: 10
+    &_inactive
+        display: none
+
+.main
+    padding-left: 280px
+    &__wrapper
+        display: none
+
+.delete-animation
+    animation: none !important
+    transform: translate(0, 0) !important
+    opacity: 1 !important
+
+.section
+    padding: 75px 200px 75px 100px
+    background-color: $white
+    &-first
+        padding: 10px 200px 75px 100px
+    &-category
+        padding: 10px 200px 75px 100px
+
+.section-title
+    font-weight: 700
+    font-size: 40px
+    line-height: 56px
+    color: $blueZodiak
+
+@media (max-width: 991px)
+    .swiper-slide--hide
+        display: none !important
+
+@import 'additional-media/_base-media'
+
+

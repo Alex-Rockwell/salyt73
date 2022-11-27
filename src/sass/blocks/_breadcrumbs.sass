@@ -1,0 +1,29 @@
+.breadcrumbs
+    padding: 50px 200px 0 100px
+    background-color: $white
+    &__item
+        display: inline
+        color: $silverChalice
+        &:not(:first-child)
+            margin-left: 5px
+            &::before
+                display: inline-block
+                content: ''
+                margin-right: 5px
+                width: 9px
+                height: 15px
+                background: url('../../img/blocks/breadcrumbs/icons/breadcrumbs-arrow.svg') center center / cover no-repeat
+    &__link, &__current
+        font-weight: inherit
+        font-size: inherit
+        line-height: inherit
+    &__link
+        @include hoverUnderlineGray
+    &__current
+        display: inline
+        color: $black
+        word-break: break-all
+        &_white
+            color: $white
+     
+@import '../blocks-media/_breadcrumbs-media'

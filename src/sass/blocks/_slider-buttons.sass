@@ -1,0 +1,44 @@
+.slide
+    &-btn
+        position: absolute
+        bottom: 50px
+        background-color: transparent
+        color: $white
+        &::after
+            content: ''
+            position: absolute
+            top: 55%
+            transform: translateY(-50%)
+            width: 27px
+            height: 10px
+            background-size: cover
+            background-position: center center
+            background-repeat: no-repeat
+            pointer-events: none
+        &_blue
+            color: $blueZodiak
+            &::after
+                background-color: $blueZodiak
+        &_prev
+            left: 110px
+            &::after
+                left: -50px
+                background-image: url('../../img/blocks/slider-buttons/arrow-prev.svg')
+            &-blue
+                color: $blueZodiak
+                &::after
+                    background-image: url('../../img/blocks/slider-buttons/arrow-prev-blue.svg')
+        &_next
+            right: 105px
+            &::after
+                right: -50px
+                background-image: url('../../img/blocks/slider-buttons/arrow-next.svg')
+            &-blue
+                color: $blueZodiak
+                &::after
+                    background-image: url('../../img/blocks/slider-buttons/arrow-next-blue.svg')
+
+@import '../blocks-media/_slider-buttons-media'
+        
+        
+        

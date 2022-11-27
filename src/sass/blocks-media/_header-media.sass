@@ -1,0 +1,198 @@
+@media (max-width: 1599px) 
+    .header
+        &_active
+            max-width: 600px
+        &__activity-wrapper
+            display: none !important
+        &__logo
+            // max-width: 166px
+            // max-height: 86px
+            &-wrapper
+                padding-top: 15px
+                height: 10vh
+                height: calc(var(--vh, 1vh) * 10)
+        &__info
+            height: 54vh
+            height: calc(var(--vh, 1vh) * 54)
+
+    .menu
+        max-width: 600px
+        &__logo
+            max-width: 211px
+            max-height: 126px
+            &-wrapper
+                padding: 25px 40px 30px 40px
+        &__info
+            padding: 40px
+            height: calc(100vh - 188px)
+            height: calc(var(--vh, 1vh) * 100 - 188px)
+        &__nav
+            margin-top: 40px
+        &__call
+            margin-top: 40px
+            padding-left: 40px
+            font-size: 26px
+            line-height: 30px
+            &::before
+                width: 30px
+                height: 30px
+
+@media (max-width: 1439px) 
+    .header
+        max-width: 250px
+        &_active
+            max-width: 500px
+        &__container
+            max-width: 250px
+        &__logo
+            // max-width: 130px
+            // max-height: 76px
+            &-wrapper
+                padding: 15px 55px 15px 30px
+                height: 10vh
+                height: calc(var(--vh, 1vh) * 10)
+        &__activity
+            &-wrapper
+                padding: 3px 20px 3px 30px
+        &__info
+            padding: 30px 30px 35px 30px
+            height: 57vh
+            height: calc(var(--vh, 1vh) * 57)
+        &__nav
+            margin-top: 15px
+
+    .menu
+        max-width: 800px
+        width: 800px
+        &__logo
+            max-width: 211px
+            max-height: 126px
+            &-wrapper
+                padding: 20px 30px 25px 30px
+        &__info
+            padding: 40px 30px 
+            height: calc(100vh - 178px)
+            height: calc(var(--vh, 1vh) * 100 - 178px)
+        &__nav
+            margin-top: 40px
+        &__item
+            &-link
+                font-size: 18px
+                line-height: 22px
+        &__call
+            margin-top: 40px
+            padding-left: 40px
+            font-size: 18px
+            line-height: 25px
+            &::before
+                width: 25px
+                height: 25px
+    
+@media (max-width: 991px)
+    .header
+        justify-content: space-between
+        align-items: center
+        padding: 10px 20px 7px 20px
+        max-width: unset
+        height: 90px
+        max-height: unset
+        background-color: $blueZodiak
+        z-index: 3
+        .menu__list
+            gap: 10px
+            .menu__item-link
+                font-size: 14px
+                margin-bottom: 0
+        &_1920
+            display: none
+        &_991
+            display: flex
+        &__logo
+            // max-width: 123.65px
+            // max-height: 79.16px
+            &-link
+                // margin-top: 8px
+                margin-left: 29px
+        &__personal
+            margin-top: 0
+        &__flex
+            column-gap: 50px
+
+    .menu
+        max-width: unset
+        width: 100%
+        position: absolute
+        transform: translateX(0)
+        opacity: 0
+        transition: opacity 0.2s
+        pointer-events: none
+        &_active
+            transition: opacity 0.2s
+            transform: translateX(0)
+            opacity: 1
+            pointer-events: unset
+        &__info
+            padding: 20px
+        &__close
+            width: 35px
+            height: 35px
+        &__logo
+            max-width: 100%
+            width: 100%
+            max-height: 100%
+            &-wrapper
+                display: grid
+                grid-template-columns: minmax(auto, 15%) minmax(auto, 70%) minmax(auto, 15%)
+                justify-content: space-between
+                align-items: center
+                padding: 10px 20px 7px 20px
+                height: 90px
+            &-link
+                justify-self: center
+                max-width: 123.65px
+                max-height: 79.16px
+        &__call
+            margin-top: 0
+            padding-left: 30px
+            font-size: 16px
+            line-height: 22px
+            &_991
+                display: inline-block
+            &_575
+                display: none
+            &::before
+                width: 20px
+                height: 20px
+        &__nav
+            margin-top: 30px
+        &__item
+            &-link
+                font-size: 16px
+                line-height: 19px
+        
+@media (max-width: 575px)
+    .header
+        padding: 10px
+
+    .menu
+        &__logo
+            &-wrapper
+                padding: 10px
+        &__info
+            padding: 10px
+            max-height: calc(100vh - 90px)
+            max-height: calc(var(--vh, 1vh) * 100 - 90px)
+            height: 100%
+            overflow-y: auto
+            @include scrollbar
+        &__nav
+            margin-top: 20px
+        &__item
+            &-link
+                // word-break: break-all
+        &__call
+            margin-top: 35px
+            &_991
+                display: none
+            &_575
+                display: inline-block

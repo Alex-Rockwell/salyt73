@@ -1,0 +1,84 @@
+@media (max-width: 991px)
+    .footer
+        display: flex
+        &__info
+            padding: 50px 20px 25px 40px
+            width: 100%
+            background-color: $blueZodiak
+        &__list
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            justify-content: space-between
+            row-gap: 10px
+            &-link
+                font-size: 14px
+                line-height: 20px
+                color: $white
+        &__call
+            position: relative
+            margin-top: 20px
+            padding-left: 52px
+            font-weight: 400
+            font-size: 24px
+            line-height: 34px
+            color: $white
+            &::before
+                content: ''
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: 0
+                width: 26px
+                height: 26px
+                background: url('../../img/blocks/footer/icons/call.svg') center center/cover no-repeat
+        &__agatech
+            &-wrapper
+                display: flex
+                align-items: center
+                column-gap: 38px
+                margin-top: 50px
+            &-text
+                font-weight: 300
+                font-size: 12px
+                line-height: 24px
+                letter-spacing: 0.03em
+                color: $silverChalice
+        &__agatech
+            &-logo
+                max-width: 97px
+                width: 100%
+                max-height: 30px
+                object-fit: cover
+                
+    .callback
+        padding: 50px 20px
+        max-width: 260px
+        height: auto
+
+@media (max-width: 767px) 
+    .footer
+        flex-wrap: wrap
+        &__info
+            padding: 40px 20px 40px 20px
+        &__call
+            margin-top: 50px
+
+    .callback
+        padding: 40px 20px
+        max-width: unset
+        &__form
+            max-width: 300px
+        
+@media (max-width: 575px)
+    .footer
+        &__info
+            padding: 40px 10px 20px 10px
+        &__list
+            grid-template-columns: repeat(2, auto)
+        &__agatech
+            &-wrapper
+                justify-content: space-between
+                column-gap: 0
+                
+    .callback
+        padding: 25px 10px

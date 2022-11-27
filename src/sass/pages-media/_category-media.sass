@@ -1,0 +1,122 @@
+@media (max-width: 1599px) 
+    .category
+        .main-list
+            .front
+                &__wrapper
+                    max-width: 66%
+                &__title
+                    word-break: break-all
+        .select-desk__wrapper
+            flex-wrap: wrap
+        .select__item-button
+            flex-basis: 25%
+            font-size: 14px
+        .select__item-button:first-child
+            margin-bottom: 90px
+    
+@media (max-width: 1439px) 
+    .category
+        &__list
+            margin-top: 30px
+        .main-list
+            grid-template-columns: repeat(2, 1fr)
+        .short-list
+            grid-template-columns: repeat(2, 1fr)
+            gap: 30px
+            &__item
+                &:not(:nth-child(-n + 6))
+                    display: none
+                 
+@media (max-width: 1199px)
+    .category
+        .main-list
+            &__item
+                height: 515px
+            .front
+                &__flex
+                    padding: 10px
+                &__list
+                    margin-bottom: 8px
+            .back
+                padding: 10px
+                &__category
+                    font-weight: 500
+                    font-size: 16px
+                    line-height: 24px
+                &__img
+                    max-width: 230px
+                    max-height: 155px
+                &__btns
+                    &-btn
+                        padding-right: 40px
+                    &-text
+                        display: none
+                &__list
+                    margin-top: 0
+                &__price
+                    &-text
+                        font-size: 18px
+                        line-height: 21px
+                        &_old
+                            font-size: 15px
+                            line-height: 21px
+    
+@media (max-width: 991px)
+    .category
+        .select-desk__wrapper
+            display: flex
+            width: 100%
+        .select-desk
+            display: block!important
+        .view
+            &__list
+                display: none
+        .main-list
+            &__item
+                max-width: unset
+            .front
+                display: none
+            .back
+                transform: rotate(0)
+    .section-category
+        padding-top: 65px!important
+
+@media (max-width: 767px) 
+    .category
+        .main-list
+            gap: 20px
+
+    .category .short-list__item:hover .card__details
+        transform: perspective(2000px) rotateY(-90deg)
+
+@media (max-width: 639px)
+    .category
+        .section-title
+            font-size: 24px
+            line-height: 24px
+        &__buttons
+            margin-top: 30px
+        .select__item-button
+            flex-basis: 40%
+            height: 48px
+            box-sizing: content-box
+            text-align: left!important
+            justify-content: start!important
+            padding-left: 35px!important
+            margin-bottom: 20px!important
+            align-items: center
+            &:before
+                width: 30px!important
+                height: 30px!important
+                left: 0!important
+                top: 50%!important
+                transform: translateY(-50%)!important
+        .category__list
+            margin-top: 0
+        .main-list
+            grid-template-columns: 1fr
+            gap: 30px
+            &__item
+                max-width: 100%
+        .select
+            max-width: 100%
